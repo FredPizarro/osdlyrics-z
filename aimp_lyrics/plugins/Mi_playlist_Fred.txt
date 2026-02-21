@@ -1,0 +1,121 @@
+Opciуn 1: Crear archivo de playlist directamente
+.\yt-dlp_x86.exe --flat-playlist --print url "https://www.youtube.com/watch?v=q2dFMNPA9jQ&list=PLXnJnv410xKO5KdIQfdhckQYrp0e7bCrt" > playlist.m3u
+
+
+Opciуn 2: Formato M3U8 con tнtulos
+.\yt-dlp_x86.exe --flat-playlist -o "%(title)s.%(ext)s" --print-to-file "%(url)s" playlist.m3u8 "URL_DEL_PLAYLIST"
+
+ .\yt-dlp_x86.exe --flat-playlist --print "#EXTINF:-1,%(title)s`n%(url)s" "https://www.youtube.co
+m/watch?v=q2dFMNPA9jQ&list=PLXnJnv410xKO5KdIQfdhckQYrp0e7bCrt" > playlist.m3u
+
+
+Установка плагина.
+
+1. Распакуйте архив
+2. Скопируйте папку плагина в папку AIMP\Plugins
+3. Откнойте Настройки >> Плагины, найдите плагин и включите его (можно просто перезапустить AIMP)
+4. Пользуйтесь
+
+
+YouTube support for AIMP.
+
+Features:
+
++ User videos and playlists (including private)
++ Can load YouTube URLs (videos, channels, playlists)
++ Can manage your YouTube playlists (add or remove videos)
++ Multi-language support
++ Exclusions
++ Automatically loads new items (playlists, users, all custom urls)
++ Close integration with AIMP:
+ - Local and global shortcuts
+ - Delete current song from disk = Add to exclusions
+ -  Add to bookmarks = Add to youtube favorites
++ Can load multiple YouTube playlists to one AIMP playlist (with grouping enabled in AIMP)
++ Open source
+
+Requirements:
+Microsoft Visual C++ 2010 Redistributable Package (x86)
+https://www.microsoft.com/en-US/download/details.aspx?id=5555
+
+Download:
+https://github.com/AdrianEddy/AIMPYouTube/releases
+https://github.com/jaryn-kubik/AIMPYouTube/releases
+https://drive.google.com/file/d/0B-f9jVoGmm7eNFNxRHJyaGp5REE/view?usp=sharing
+https://www.dropbox.com/s/v98q3urarj164uw/aimp_YouTube.zip?dl=1
+http://eddy.cx/files/aimp_YouTube.zip
+
+Changelog
+v1.7
+- Fixed signature decoder
+v1.6
+- Fixed signature decoder
+v1.5
+- Fixed signature decoder
+v1.4
+- Fixed signature decoder again (google just changed it 1 hour ago)
+- Updated google login button appearance
+- Updated langs
+- Updated youtube-dl
+v1.3
+- Fixed signature decoder
+- Added livestream support
+- Added youtube-dl as a fallback
+- Fixed langs encodings
+- Save last state of "Create new playlist" checkbox
+v1.2
+- Added Update button in the YouTube plugin options which should launch the "youtube-dl.exe -U" command as admin
+v1.1.4
+- Added some code to filter out warnings youtube-dl so they don't get passed to AIMP
+v1.1.3
+- Some hook after adding a bookmark was trying to access a null pointer
+v1.1.2
+- Made the youtube-dl command line arguments configurable + added timeout and better error handling
+v1.1.1
+- Used youtube-dl to handle the whole "getting the audio/video address" thing
+v1.1
+- Fixed signature decoder yet again
+- Add URL to file metadata
+- Fix playlist optional name
+- Update Hungarian language
+v1.0
+- Loading artwork images
+- Drag&Drop support
+- Open file location
+- Copy file to clipboard
+- Video duration is now displayed in playlist
+- Bug fixes
+v0.9
+- Fixed selection of default stream
+v0.8
+- Updated YouTube signature decoder
+- Try to load audio-only stream first
+v0.7
+- Updated YouTube signature decoder
+v0.6
+- Updated YouTube signature decoder
+v0.5
+- Fixed memory leak in Audio Converter and Advanced Tag Editor
+v0.4
+- Fixed YouTube signature decoder for some videos
+- Added parsing of "http://youtu.be/XXX" URLs
+- Added Eesti translation (thanks to +Fix)
+v0.3
+- Added "Check for new videos" to the misc playlist context menu
+- Updated Russian translation
+v0.2
+- Fixed authorization issues
+- Refresh user playlists on startup and every hour
+v0.1
+- Initial release
+
+Current languages: English, Russian (thanks to Долматов Алексей!), Eesti (thanks to +Fix) and Polish.
+Any further translations are of course welcome :)
+
+There is a lot of music on YouTube these days. People are listenening music from YouTube a lot, but it was not designed as convenient music service, so it lacks many functions that decent music player should have. The fact that it is playing in web browser doesn't help either. Fortunately AIMP has all the features we need, so why don't just make AIMP play YouTube videos? Continuing my experience from my SoundCloud plugin, I've made the effort to implement YouTube streaming support for AIMP. So here it is, enjoy :)
+
+It is not yet tested on every possible use case so please report any bugs you encounter.
+
+I'm looking forward to your feedback :)
+
+Code can be found at https://github.com/AdrianEddy/AIMPYouTube

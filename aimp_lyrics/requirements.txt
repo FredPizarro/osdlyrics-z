@@ -1,0 +1,8 @@
+# OSD Lyrics para AIMP — Dependencias
+# Instalar con: pip install -r requirements.txt
+
+# Control remoto de AIMP (requiere pywin32 internamente)
+pyaimp>=0.2.3
+
+# pywin32 — requerido por pyaimp para Win32 API
+pywin32>=306

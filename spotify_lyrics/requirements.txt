@@ -1,0 +1,12 @@
+# OSD Lyrics para Spotify — Dependencias
+# Instalar con: uv pip install -r requirements.txt
+
+# Spotify Web API (OAuth PKCE — no requiere client secret)
+# Necesitas registrar una app en https://developer.spotify.com/dashboard
+spotipy>=2.23.0
+
+# Variables de entorno desde archivo .env
+python-dotenv>=1.0.0
+
+# pywin32 — Para el modo fallback (leer ventana de Spotify sin API)
+pywin32>=306

@@ -1,0 +1,12 @@
+# Credenciales — nunca subir al repositorio
+.env
+.spotify_cache
+
+# Entorno virtual
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Caché de letras generada en tiempo de ejecución
+spotify_associations.json
